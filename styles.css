@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.nav__bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+}
+
+.nav__bar__logo {
+    color: brown;
+    font-size: 2rem;
+    font-family: 'Lobster';
+    text-shadow: 4px 3px 0px #fff, 
+                 9px 8px 0px rgba(0,0,0,0.15);
+}
+
+.nav__bar__logo {
+    display: block;
+    transform: rotate(-5.5deg);
+}
+
+.nav__time {
+    display: flex;
+    gap: 0.5em;
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5em 0;
+}
+
+.filters__input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input__row {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.input__selection {
+    display: flex;
+    flex-direction: column;
+}
+
+.product__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+}
+
+
+.card {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 10em;
+    height: 10em;
+    padding: 1em 2em;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 1rem;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072);
+    transition: transform 0.5s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card__name {
+    font-size: 1.25em;
+}
+
+.card__image {
+    width: 6em;
+}
+
+.card__value {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75em;
+}
+
+.close__cart {
+    padding: 1rem 0 0 1rem;
+}
+
+.close__cart span {
+    font-size: 2rem;
+}
+
+/* JQuery CSS */
+
+#cart {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -100%;   
+    background-color: rgb(255, 255, 255);
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 5px rgb(0 0 0 / 50%);
+}
+
+#cart.active {
+    right: 0;
+    width: 25%;
+}
+
+#productCards {
+    width: 100%;
+    transition: 0.3s ease-in-out;    
+}
+
+#productCards.active {
+    width: 70%;
+}
+

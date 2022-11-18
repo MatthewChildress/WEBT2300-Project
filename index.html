@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Group Project</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="nav__bar">
+        <div class="nav__bar__logo">
+          <p>Logan's Auto Sales</p>
+        </div>
+        <div class="nav__time">
+          <div id="timeGreet"></div>
+          <div id="date"></div>
+        </div>
+        <div class="cart__toggle" id="toggleCart">
+          <span class="material-symbols-outlined cart__icon" >
+            shopping_cart
+          </span>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="filters">
+        <p>Filter Product</p>
+        <div class="filters__input">
+<!--           <p>Make</p>
+          <div class="input__row">
+            <div class="input__selection">
+              <label for="dodge">Dodge</label>
+              <input type="checkbox" id="check__make" name="dodge" value="dodge">
+            </div>
+            <div class="input__selection">
+              <label for="ford">Ford</label>
+              <input type="checkbox" id="check__make" name="ford" value="ford">
+            </div>
+            <div class="input__selection">
+              <label for="gmc">GMC</label>
+              <input type="checkbox" id="check__make" name="gmc" value="gmc">
+            </div>
+            <div class="input__selection">
+              <label for="jeep">Jeep</label>
+              <input type="checkbox" id="check__make" name="jeep" value="jeep">
+            </div>
+            <div class="input__selection">
+              <label for="maserati">Maserati</label>
+              <input type="checkbox" id="check__make" name="maserati" value="maserati">
+            </div>
+            <div class="input__selection">
+              <label for="subaru">Subaru</label>
+              <input type="checkbox" id="check__make" name="subaru" value="subaru">
+            </div>
+            <div class="input__selection">
+              <label for="tesla">Tesla</label>
+              <input type="checkbox" id="check__make" name="tesla" value="tesla">
+            </div>
+            <div class="input__selection">
+              <label for="toyota">Toyota</label>
+              <input type="checkbox" id="check__make" name="toyota" value="toyota">
+            </div>
+          </div> -->
+          <p>Color</p>
+          <div class="input__row">
+            <div class="input__selection">
+              <label for="silver">Silver</label>
+              <input type="checkbox" id="checkColor" class="check__color" name="color" value="silver">
+            </div>
+            <div class="input__selection">
+              <label for="silver">White</label>
+              <input type="checkbox" id="checkColor" class="check__color" name="color" value="white">
+            </div>
+            <div class="input__selection">
+              <label for="silver">Red</label>
+              <input type="checkbox" id="checkColor" class="check__color" name="color" value="red">
+            </div>
+            <div class="input__selection">
+              <label for="silver">Black</label>
+              <input type="checkbox" id="checkColor" class="check__color" name="color" value="black">
+            </div>
+            <div class="input__selection">
+              <label for="silver">Blue</label>
+              <input type="checkbox" id="checkColor" class="check__color" name="color" value="blue">
+            </div>
+            <div class="input__selection">
+              <label for="silver">Yellow</label>
+              <input type="checkbox" id="checkColor" class="check__color" name="color" value="yellow">
+            </div>
+            <div class="input__selection">
+              <label for="silver">Brown</label>
+              <input type="checkbox" id="checkColor" class="check__color" name="color" value="brown">
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="products" id="products">
+        <div class="product__cards" id="productCards"></div>
+        <aside class="sidebar" id="cart">
+          <div class="close__cart">
+            <span class="material-symbols-outlined">
+              arrow_right_alt
+              </span>
+          </div>
+        </aside>
+      </section>
+    </main>
+    <script type="module" src="./main.js" defer></script>
+  </body>
+</html>
