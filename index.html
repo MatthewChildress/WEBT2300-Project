@@ -18,96 +18,124 @@
         <div class="nav__bar__logo">
           <p>Logan's Auto Sales</p>
         </div>
+        <!-- time -->
         <div class="nav__time">
           <div id="timeGreet"></div>
           <div id="date"></div>
         </div>
         <div class="cart__toggle" id="toggleCart">
-          <span class="material-symbols-outlined cart__icon" >
+          <span class="material-symbols-outlined cart__icon">
             shopping_cart
           </span>
         </div>
       </div>
     </header>
     <main>
+      <!--Filter by color-->
       <div class="filters">
-        <p>Filter Product</p>
+        <p>Filter Product Color</p>
         <div class="filters__input">
-<!--           <p>Make</p>
-          <div class="input__row">
-            <div class="input__selection">
-              <label for="dodge">Dodge</label>
-              <input type="checkbox" id="check__make" name="dodge" value="dodge">
-            </div>
-            <div class="input__selection">
-              <label for="ford">Ford</label>
-              <input type="checkbox" id="check__make" name="ford" value="ford">
-            </div>
-            <div class="input__selection">
-              <label for="gmc">GMC</label>
-              <input type="checkbox" id="check__make" name="gmc" value="gmc">
-            </div>
-            <div class="input__selection">
-              <label for="jeep">Jeep</label>
-              <input type="checkbox" id="check__make" name="jeep" value="jeep">
-            </div>
-            <div class="input__selection">
-              <label for="maserati">Maserati</label>
-              <input type="checkbox" id="check__make" name="maserati" value="maserati">
-            </div>
-            <div class="input__selection">
-              <label for="subaru">Subaru</label>
-              <input type="checkbox" id="check__make" name="subaru" value="subaru">
-            </div>
-            <div class="input__selection">
-              <label for="tesla">Tesla</label>
-              <input type="checkbox" id="check__make" name="tesla" value="tesla">
-            </div>
-            <div class="input__selection">
-              <label for="toyota">Toyota</label>
-              <input type="checkbox" id="check__make" name="toyota" value="toyota">
-            </div>
-          </div> -->
-          <p>Color</p>
           <div class="input__row">
             <div class="input__selection">
               <label for="silver">Silver</label>
-              <input type="checkbox" id="checkColor" class="check__color" name="color" value="silver">
+              <input
+                type="checkbox"
+                id="checkColor"
+                class="check__color"
+                name="color"
+                value="silver"
+              />
             </div>
             <div class="input__selection">
               <label for="silver">White</label>
-              <input type="checkbox" id="checkColor" class="check__color" name="color" value="white">
+              <input
+                type="checkbox"
+                id="checkColor"
+                class="check__color"
+                name="color"
+                value="white"
+              />
             </div>
             <div class="input__selection">
               <label for="silver">Red</label>
-              <input type="checkbox" id="checkColor" class="check__color" name="color" value="red">
+              <input
+                type="checkbox"
+                id="checkColor"
+                class="check__color"
+                name="color"
+                value="red"
+              />
             </div>
             <div class="input__selection">
               <label for="silver">Black</label>
-              <input type="checkbox" id="checkColor" class="check__color" name="color" value="black">
+              <input
+                type="checkbox"
+                id="checkColor"
+                class="check__color"
+                name="color"
+                value="black"
+              />
             </div>
             <div class="input__selection">
               <label for="silver">Blue</label>
-              <input type="checkbox" id="checkColor" class="check__color" name="color" value="blue">
+              <input
+                type="checkbox"
+                id="checkColor"
+                class="check__color"
+                name="color"
+                value="blue"
+              />
             </div>
             <div class="input__selection">
               <label for="silver">Yellow</label>
-              <input type="checkbox" id="checkColor" class="check__color" name="color" value="yellow">
+              <input
+                type="checkbox"
+                id="checkColor"
+                class="check__color"
+                name="color"
+                value="yellow"
+              />
             </div>
             <div class="input__selection">
               <label for="silver">Brown</label>
-              <input type="checkbox" id="checkColor" class="check__color" name="color" value="brown">
+              <input
+                type="checkbox"
+                id="checkColor"
+                class="check__color"
+                name="color"
+                value="brown"
+              />
             </div>
           </div>
         </div>
       </div>
       <section class="products" id="products">
         <div class="product__cards" id="productCards"></div>
+        <!-- shopping cart -->
         <aside class="sidebar" id="cart">
           <div class="close__cart">
-            <span class="material-symbols-outlined">
-              arrow_right_alt
-              </span>
+            <span class="material-symbols-outlined"> arrow_right_alt </span>
+          </div>
+          <table class="cart__table">
+            <thead id="cartContent" class="cart__items">
+              <tr class="cart__labels">
+                <th>Image</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th> </th>
+              </tr>
+            </thead>
+          </table>
+<!--           <button class="item__subtract" id="itemSubtract">
+            
+          </button> -->
+          <div class="total__box">
+            <p class="total__text">Total: </p>
+            <span class="cart__total">$0</p>
+          </div>
+          <div class="button__checkout__box">
+            <button type="button" class="button__checkout">CHECKOUT</button>
           </div>
         </aside>
       </section>

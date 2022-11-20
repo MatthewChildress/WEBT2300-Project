@@ -14,17 +14,16 @@ export default function itemsForEach() {
         let carItems = `
         <div class="card ${car.id}">
             <img class="card__image" src="${car.image}" alt="${car.make} ${car.model} pic">
-            <div class="card__info">
-                <p class="card__make car__${car.make} car__${car.model} car__${car.color}">
-                    ${car.year} ${car.make} ${car.model}
-                </p>
+            <div class="card__name car__${car.make} car__${car.model} car__${car.color}">
+                ${car.year} ${car.make} ${car.model}
             </div>
             <div class="card__value">
-            <span class="material-symbols-outlined">remove</span>
             <p class="card__price">
                 ${car.price}
             </p>
-            <span class="material-symbols-outlined">add</span>
+            <button class="item__add" id="itemAdd">
+            Add Item
+            </button>
             </div>
         </div>
         
@@ -33,16 +32,4 @@ export default function itemsForEach() {
         carCard.innerHTML = carItems;
         productCards.append(carCard);
     });
-    
-    // declares new array
-    /* let colorChoices = [];
-    colors.forEach(color => {
-        color.addEventListener('change', () => {
-            color.checked ? colorChoices.push(color.value) : colorChoices.splice( colorChoices.indexOf(color.value), 1);
-            console.log(colorChoices)
-            const filteredColors = cars.filter(item => colorChoices.includes(item.value));
-            console.log(filteredColors)
-            itemsForEach(filteredColors)
-        })
-    }) */
 }

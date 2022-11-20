@@ -1,8 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Lobster&display=swap');
+
+:root {
+    --accent: #42d6a4;
+    --primary: ;
+    --box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072);
+}
 
 body {
     padding: 0;
     margin: 0;
+    font-family: Lato;
 }
 
 .nav__bar {
@@ -39,6 +48,11 @@ body {
     padding: 5em 0;
 }
 
+.filters > p {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
 .filters__input {
     display: flex;
     flex-direction: column;
@@ -48,12 +62,57 @@ body {
 .input__row {
     display: flex;
     flex-direction: row;
-    gap: 1em;
+    gap: 2em;
 }
+
+input[type="checkbox"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    /* Remove most all native input styles */
+    appearance: none;
+    /* For iOS < 15 */
+    /* Not removed via appearance */
+    margin: 0;
+  
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+  
+    display: grid;
+    place-content: center;
+  }
+  
+  input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--accent);
+    /* Windows High Contrast Mode */
+    background-color: CanvasText;
+  }
+  
+  input[type="checkbox"]:checked::before {
+    transform: scale(1);
+  }
+  
+  input[type="checkbox"]:focus {
+    outline: max(2px, 0.15em) solid currentColor;
+    outline-offset: max(2px, 0.15em);
+  }
 
 .input__selection {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
 }
 
 .product__cards {
@@ -70,14 +129,12 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 10em;
-    height: 10em;
+    width: 13em;
+    height: 13em;
     padding: 1em 2em;
     border: 1px solid rgba(0,0,0,0.1);
     border-radius: 1rem;
-    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.072);
+    box-shadow: var(--box-shadow);
     transition: transform 0.5s;
 }
 
@@ -107,12 +164,74 @@ body {
     gap: 0.75em;
 }
 
+.item__add {
+    border: none;
+    border-radius: 2.5%;
+    color: white;
+    background-color: #42d6a4;
+    padding: 0.5em 0.75em;  
+    box-shadow: var(--box-shadow);
+}
+
 .close__cart {
     padding: 1rem 0 0 1rem;
 }
 
 .close__cart span {
     font-size: 2rem;
+    padding-bottom: 2em;
+}
+
+.cart__table {
+    border-spacing: 1.5em;
+    text-align: center;
+}
+
+.cart__item__image {
+    width: 5em;
+}
+
+.cart__quantity {
+    width: 3em;
+    height: 2em;
+}
+
+.cart__button {
+    border: none;
+    border-radius: 25%;
+    box-shadow: var(--box-shadow);
+    color: white;
+    background-color: #ff6961;
+}
+
+.total__box {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 2em;
+    padding: 4em 0 0 4em; 
+}
+
+.cart__total {
+    text-align: right;
+}
+
+.button__checkout__box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button__checkout {
+    border: none;
+    border-radius: 2.5%;
+    padding: 1em 2em;
+    box-shadow: var(--box-shadow);
+    color: white;
+    background-color: #59adf6;
 }
 
 /* JQuery CSS */
@@ -129,7 +248,7 @@ body {
 
 #cart.active {
     right: 0;
-    width: 25%;
+    width: 30%;
 }
 
 #productCards {
