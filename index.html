@@ -127,19 +127,55 @@
               </tr>
             </thead>
           </table>
-<!--           <button class="item__subtract" id="itemSubtract">
-            
-          </button> -->
           <div class="total__box">
             <p class="total__text">Total: </p>
             <span class="cart__total">$0</p>
           </div>
-          <div class="button__checkout__box">
+          <div class="button__cart__box">
+            <p>Click button to check for discounts</p>
+            <button type="button" class="modal__open" id="modalOpen"><span class="material-symbols-outlined">
+              expand_content
+              </span></button>
             <button type="button" class="button__checkout">CHECKOUT</button>
           </div>
         </aside>
       </section>
     </main>
+    <!-- discount modal -->
+    <div class="modal__discount" id="discountModal">
+      <div class="modal__form" id="modalForm">
+        <div class="modal__form__box" id="modalFormBox">
+          <button type="button" id="modalClose" class="modal__close"><span class="material-symbols-outlined">
+            close
+            </span></button>
+          <p>Answer the following Questions:</p>
+          <br>
+          <!-- radio fields for the questions -->
+          <p>Are you subscribed to our Members Reward's Program?</p> <!-- Potential Member Rewards Discount-->
+          <input type="radio" name="Member" id="Member" value="true">Yes<br>
+          <input type="radio" name="Member" id="Member" value="false">No<br>
+          <br>
+          <p>Are you a US Veteran?</p> <!-- Potential Veterans Discount-->
+          <input type="radio" name="Veteran" id="Veteran" value="true">Yes<br>
+          <input type="radio" name="Veteran" id="Veteran" value="false">No<br>
+          <p>Are you an Employee at our company?</p> <!-- Potential Employee Discount-->
+          <input type="radio" name="Employee" id="Employee" value="true">Yes<br>
+          <input type="radio" name="Employee" id="Employee" value="false">No<br>
+          <p>What is your Favorite Color</p> <!-- Placeholder, I am uncreative -->
+          <input type="radio" name="Placeholder1" id="Placeholder1" value="true">Placeholder Value1<br>
+          <input type="radio" name="Placeholder1" id="Placeholder1" value="false">Placeholder Value2<br>
+          <input type="radio" name="Placeholder1" id="Placeholder1" value="false">Placeholder Value3<br>
+          <input type="radio" name="Placeholder1" id="Placeholder1" value="false">Placeholder Value4<br>
+          <br>
+          <br>
+          <!-- A submit button that allows the javascript to function -->
+          <button class="discount__submit" id="discountSubmit">Submit</button>
+          <br>
+          <!--Quiz Output-->
+          <p id="quizOutput"></p>
+        </div>
+      </div>
+    </div>
     <script type="module" src="./main.js" defer></script>
   </body>
 </html>

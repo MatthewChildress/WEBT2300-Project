@@ -1,262 +1,355 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Lobster&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Lobster&display=swap");
 
 :root {
-    --accent: #42d6a4;
-    --primary: ;
-    --box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  --secondary: #ff6961;
+  --accent: #42d6a4;
+  --text-secondary: #ffffff;
+  --primary: ;
+  --box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
     0 22.3px 17.9px rgba(0, 0, 0, 0.072);
 }
 
 body {
-    padding: 0;
-    margin: 0;
-    font-family: Lato;
+  padding: 0;
+  margin: 0;
+  font-family: Lato;
 }
 
 .nav__bar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1em 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
 }
 
 .nav__bar__logo {
-    color: brown;
-    font-size: 2rem;
-    font-family: 'Lobster';
-    text-shadow: 4px 3px 0px #fff, 
-                 9px 8px 0px rgba(0,0,0,0.15);
+  color: brown;
+  font-size: 2rem;
+  font-family: "Lobster";
+  text-shadow: 4px 3px 0px var(--text-secondary),
+    9px 8px 0px rgba(0, 0, 0, 0.15);
 }
 
 .nav__bar__logo {
-    display: block;
-    transform: rotate(-5.5deg);
+  display: block;
+  transform: rotate(-5.5deg);
 }
 
 .nav__time {
-    display: flex;
-    gap: 0.5em;
+  display: flex;
+  gap: 0.5em;
 }
 
 .filters {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 5em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5em 0;
 }
 
 .filters > p {
-    font-size: 1.5em;
-    font-weight: bold;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 .filters__input {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .input__row {
-    display: flex;
-    flex-direction: row;
-    gap: 2em;
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
 }
 
 input[type="checkbox"] {
-    /* Add if not using autoprefixer */
-    -webkit-appearance: none;
-    /* Remove most all native input styles */
-    appearance: none;
-    /* For iOS < 15 */
-    /* Not removed via appearance */
-    margin: 0;
-  
-    font: inherit;
-    color: currentColor;
-    width: 1.15em;
-    height: 1.15em;
-    border: 0.15em solid currentColor;
-    border-radius: 0.15em;
-    transform: translateY(-0.075em);
-  
-    display: grid;
-    place-content: center;
-  }
-  
-  input[type="checkbox"]::before {
-    content: "";
-    width: 0.65em;
-    height: 0.65em;
-    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-    transform: scale(0);
-    transform-origin: bottom left;
-    transition: 120ms transform ease-in-out;
-    box-shadow: inset 1em 1em var(--accent);
-    /* Windows High Contrast Mode */
-    background-color: CanvasText;
-  }
-  
-  input[type="checkbox"]:checked::before {
-    transform: scale(1);
-  }
-  
-  input[type="checkbox"]:focus {
-    outline: max(2px, 0.15em) solid currentColor;
-    outline-offset: max(2px, 0.15em);
-  }
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  /* Remove most all native input styles */
+  appearance: none;
+  /* For iOS < 15 */
+  /* Not removed via appearance */
+  margin: 0;
+
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--accent);
+  /* Windows High Contrast Mode */
+  background-color: CanvasText;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="checkbox"]:focus {
+  outline: max(2px, 0.15em) solid currentColor;
+  outline-offset: max(2px, 0.15em);
+}
 
 .input__selection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
 }
 
 .product__cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
 }
 
-
 .card {
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 13em;
-    height: 13em;
-    padding: 1em 2em;
-    border: 1px solid rgba(0,0,0,0.1);
-    border-radius: 1rem;
-    box-shadow: var(--box-shadow);
-    transition: transform 0.5s;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 13em;
+  height: 13em;
+  padding: 1em 2em;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.5s;
 }
 
 .card:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .card__info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .card__name {
-    font-size: 1.25em;
+  font-size: 1.25em;
 }
 
 .card__image {
-    width: 6em;
+  width: 6em;
 }
 
 .card__value {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 0.75em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75em;
 }
 
 .item__add {
-    border: none;
-    border-radius: 2.5%;
-    color: white;
-    background-color: #42d6a4;
-    padding: 0.5em 0.75em;  
-    box-shadow: var(--box-shadow);
+  border: none;
+  border-radius: 2.5%;
+  color: var(--text-secondary);
+  background-color: #42d6a4;
+  padding: 0.5em 0.75em;
+  box-shadow: var(--box-shadow);
 }
 
 .close__cart {
-    padding: 1rem 0 0 1rem;
+  padding: 1rem 0 0 1rem;
 }
 
 .close__cart span {
-    font-size: 2rem;
-    padding-bottom: 2em;
+  font-size: 2rem;
+  padding-bottom: 2em;
 }
 
 .cart__table {
-    border-spacing: 1.5em;
-    text-align: center;
+  border-spacing: 1.5em;
+  text-align: center;
 }
 
 .cart__item__image {
-    width: 5em;
+  width: 5em;
 }
 
 .cart__quantity {
-    width: 3em;
-    height: 2em;
+  width: 3em;
+  height: 2em;
 }
 
 .cart__button {
-    border: none;
-    border-radius: 25%;
-    box-shadow: var(--box-shadow);
-    color: white;
-    background-color: #ff6961;
+  border: none;
+  border-radius: 25%;
+  box-shadow: var(--box-shadow);
+  color: var(--text-secondary);
+  background-color: var(--secondary);
 }
 
 .total__box {
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    font-size: 2em;
-    padding: 4em 0 0 4em; 
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 2em;
+  padding: 4em 0 0 4em;
 }
 
 .cart__total {
-    text-align: right;
+  text-align: right;
 }
 
-.button__checkout__box {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.button__cart__box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+  justify-content: center;
+  align-items: center;
 }
 
-.button__checkout {
-    border: none;
-    border-radius: 2.5%;
-    padding: 1em 2em;
-    box-shadow: var(--box-shadow);
-    color: white;
-    background-color: #59adf6;
+.discount__button__box {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.button__checkout,
+.discount__submit {
+  border: none;
+  border-radius: 2.5%;
+  padding: 1em 2em;
+  box-shadow: var(--box-shadow);
+  color: var(--text-secondary);
+  background-color: #59adf6;
+}
+
+.modal__form {
+  padding: 1em;
+  margin: 0 25%;
+  width: 40%;
+  background-color: #ffffff;
+  box-shadow: var(--box-shadow);
 }
 
 /* JQuery CSS */
 
 #cart {
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    right: -100%;   
-    background-color: rgb(255, 255, 255);
-    transition: 0.3s ease-in-out;
-    box-shadow: 0 0 5px rgb(0 0 0 / 50%);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  background-color: rgb(255, 255, 255);
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 0 5px rgb(0 0 0 / 50%);
 }
 
 #cart.active {
-    right: 0;
-    width: 30%;
+  right: 0;
+  width: 30%;
 }
 
 #productCards {
-    width: 100%;
-    transition: 0.3s ease-in-out;    
+  width: 100%;
+  transition: 0.3s ease-in-out;
 }
 
 #productCards.active {
-    width: 70%;
+  width: 70%;
 }
 
+#discountModal {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  padding: 100px;
+  z-index: 100;
+  display: none;
+  overflow-y: scroll;
+}
+
+#modalOpen {
+  position: absolute;
+  float: left;
+  position: absolute;
+  transition: 1s all;
+  padding: 1em;
+  border: none;
+  border-radius: 50%;
+  line-height: 1px;
+  background-color: var(--accent);
+  color: var(--text-secondary);
+  box-shadow: var(--box-shadow);
+}
+
+#modalClose {
+  float: right;
+  padding: 1em 1em 0 0;
+  background-color: var(--secondary);
+  color: var(--text-secondary);
+  border-radius: 50%;
+  width: 0px;
+  height: 0px;
+  padding: 0;
+  transition: 0.4s all;
+  border: none;
+  font: 12px Helvetica, sans-serif;
+}
+
+.ball {
+  animation-name: bigandfit;
+  animation-duration: 1.5s;
+  -webkit-animation-fill-mode: backwards;
+}
+
+@keyframes bigandfit {
+  0% {
+    width: 50px;
+    height: 50px;
+  }
+  5% {
+    width: 70px;
+  }
+  12% {
+    width: 100px;
+  }
+  20% {
+    width: 70px;
+  }
+  25% {
+    width: 50px;
+    height: 50px;
+    margin: 255px 0 0 calc(-250%);
+    border-radius: 100%;
+  }
+  100% {
+    width: 1000%;
+    height: 1000%;
+    /*     margin: calc(-350%) 0 0 calc(-100%); */
+  }
+}

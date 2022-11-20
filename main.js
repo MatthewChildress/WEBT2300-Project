@@ -7,7 +7,9 @@ import { removeCartItem } from './cart-functions/removeCartItem.js'
 import { quantityChanged } from './cart-functions/quantityChanged.js'
 import { addToCartClicked } from './cart-functions/addtoCartClicked.js'
 import { purchaseItems } from './cart-functions/purchaseItems.js'
-/* import cartLogic from './cart-functions/cartLogic.js' */
+import { openDiscountModal } from './ui-functions/openDiscountModal.js'
+import { closeDiscountModal } from './ui-functions/closeDiscountModal.js'
+import { submitDiscount } from './ui-functions/submitDiscount.js'
 
 
 
@@ -20,7 +22,9 @@ timeGreeting();
 
 // jQuery to open & close shopping cart div
 showCart();
-
+openDiscountModal();
+closeDiscountModal();
+submitDiscount();
 
 //iterates of array of objects and creates dom elements and their ids/classes
 itemsForEach();
