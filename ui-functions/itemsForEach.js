@@ -12,7 +12,7 @@ export default function itemsForEach() {
 
         // passes in html similar to react api calls
         let carItems = `
-        <div class="card ${car.id}">
+        <div class="card ${car.color}" data-color="${car.color}">
             <img class="card__image" src="${car.image}" alt="${car.make} ${car.model} pic">
             <div class="card__name car__${car.make} car__${car.model} car__${car.color}">
                 ${car.year} ${car.make} ${car.model}

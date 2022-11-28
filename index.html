@@ -32,83 +32,92 @@
     </header>
     <main>
       <!--Filter by color-->
-      <div class="filters">
-        <p>Filter Product Color</p>
-        <div class="filters__input">
-          <div class="input__row">
-            <div class="input__selection">
-              <label for="silver">Silver</label>
-              <input
-                type="checkbox"
-                id="checkColor"
-                class="check__color"
-                name="color"
-                value="silver"
-              />
-            </div>
-            <div class="input__selection">
-              <label for="silver">White</label>
-              <input
-                type="checkbox"
-                id="checkColor"
-                class="check__color"
-                name="color"
-                value="white"
-              />
-            </div>
-            <div class="input__selection">
-              <label for="silver">Red</label>
-              <input
-                type="checkbox"
-                id="checkColor"
-                class="check__color"
-                name="color"
-                value="red"
-              />
-            </div>
-            <div class="input__selection">
-              <label for="silver">Black</label>
-              <input
-                type="checkbox"
-                id="checkColor"
-                class="check__color"
-                name="color"
-                value="black"
-              />
-            </div>
-            <div class="input__selection">
-              <label for="silver">Blue</label>
-              <input
-                type="checkbox"
-                id="checkColor"
-                class="check__color"
-                name="color"
-                value="blue"
-              />
-            </div>
-            <div class="input__selection">
-              <label for="silver">Yellow</label>
-              <input
-                type="checkbox"
-                id="checkColor"
-                class="check__color"
-                name="color"
-                value="yellow"
-              />
-            </div>
-            <div class="input__selection">
-              <label for="silver">Brown</label>
-              <input
-                type="checkbox"
-                id="checkColor"
-                class="check__color"
-                name="color"
-                value="brown"
-              />
+      <form>
+        <div class="filters">
+          <p>Filter Product Color</p>
+          <div class="filters__input">
+            <div class="input__row">
+              <div class="input__selection">
+                <label for="color">Silver</label>
+                <input
+                  type="checkbox"
+                  id="Silver"
+                  class="check__color"
+                  name="color"
+                  value="Silver"
+                  data-color="Silver"
+                />
+              </div>
+              <div class="input__selection">
+                <label for="color">White</label>
+                <input
+                  type="checkbox"
+                  id="White"
+                  class="check__color"
+                  name="color"
+                  value="White"
+                  data-color="White"
+                />
+              </div>
+              <div class="input__selection">
+                <label for="color">Red</label>
+                <input
+                  type="checkbox"
+                  id="Red"
+                  class="check__color"
+                  name="color"
+                  value="Red"
+                  data-color="Red"
+                />
+              </div>
+              <div class="input__selection">
+                <label for="color">Black</label>
+                <input
+                  type="checkbox"
+                  id="Black"
+                  class="check__color"
+                  name="color"
+                  value="Black"
+                  data-color="Black"
+                />
+              </div>
+              <div class="input__selection">
+                <label for="color">Blue</label>
+                <input
+                  type="checkbox"
+                  id="Blue"
+                  class="check__color"
+                  name="color"
+                  value="Blue"
+                  data-color="Blue"
+                />
+              </div>
+              <div class="input__selection">
+                <label for="color">Yellow</label>
+                <input
+                  type="checkbox"
+                  id="Yellow"
+                  class="check__color"
+                  name="color"
+                  value="Yellow"
+                  data-color="Yellow"
+                />
+              </div>
+              <div class="input__selection">
+                <label for="color">Brown</label>
+                <input
+                  type="checkbox"
+                  id="Brown"
+                  class="check__color"
+                  name="color"
+                  value="Brown"
+                  data-color="Brown"
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </form>
       <section class="products" id="products">
         <div class="product__cards" id="productCards"></div>
         <!-- shopping cart -->
@@ -130,13 +139,19 @@
           <div class="total__box">
             <p class="total__text">Total: </p>
             <span class="cart__total">$0</p>
+            <p class="total__discount">Discount:
+              <span class="discount__total" id="discountTotal"></span>
+            </p>
+            <p class="total__overall">Discount:
+              <span class="discount__overall" id="totalOverall"></span>
+            </p>
           </div>
           <div class="button__cart__box">
             <p>Click button to check for discounts</p>
             <button type="button" class="modal__open" id="modalOpen"><span class="material-symbols-outlined">
               expand_content
               </span></button>
-            <button type="button" class="button__checkout">CHECKOUT</button>
+            <button type="button" class="button__checkout" id="checkout__button">CHECKOUT</button>
           </div>
         </aside>
       </section>
@@ -161,11 +176,6 @@
           <p>Are you an Employee at our company?</p> <!-- Potential Employee Discount-->
           <input type="radio" name="Employee" id="Employee" value="true">Yes<br>
           <input type="radio" name="Employee" id="Employee" value="false">No<br>
-          <p>What is your Favorite Color</p> <!-- Placeholder, I am uncreative -->
-          <input type="radio" name="Placeholder1" id="Placeholder1" value="true">Placeholder Value1<br>
-          <input type="radio" name="Placeholder1" id="Placeholder1" value="false">Placeholder Value2<br>
-          <input type="radio" name="Placeholder1" id="Placeholder1" value="false">Placeholder Value3<br>
-          <input type="radio" name="Placeholder1" id="Placeholder1" value="false">Placeholder Value4<br>
           <br>
           <br>
           <!-- A submit button that allows the javascript to function -->
@@ -173,6 +183,25 @@
           <br>
           <!--Quiz Output-->
           <p id="quizOutput"></p>
+        </div>
+      </div>
+    </div>
+    <!--  checkout modal -->
+    <div class="modal__checkout" id="modalCheckout">
+      <div class="modal__checkout__wrapper">
+        <div class="modal__checkout__container" id="checkoutContainer">
+          <table class="checkout__table">
+            <thead id="checkoutContent" class="checkout__items">
+              <tr class="cart__labels">
+                <th>Image</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th> </th>
+              </tr>
+            </thead>
+          </table>
+          <button class="checkout__close" id="checkoutClose">Close</button>
         </div>
       </div>
     </div>
