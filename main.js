@@ -12,10 +12,11 @@ import { closeDiscountModal } from './ui-functions/closeDiscountModal.js'
 import { submitDiscount } from './ui-functions/submitDiscount.js'
 import { filterItems } from './ui-functions/filterItems.js'
 import { getDiscount } from './cart-functions/getDiscount.js'
+import { checkoutReceiptClose } from './cart-functions/checkoutReceipt.js'
 
 
-let discountSubmit = document.getElementById("discountSubmit");
-discountSubmit.addEventListener('click', getDiscount);
+document.getElementById("discountSubmit").addEventListener('click', getDiscount);
+document.getElementById("checkoutClose").addEventListener('click', checkoutReceiptClose);
 
 // gives time & day. can append to be two divs if needed
 setInterval(timeCalculation, 1000);

@@ -1,10 +1,6 @@
-import { updateCartTotal } from "./updateCartTotal.js"
+import { checkoutReceiptOpen } from "./checkoutReceipt.js"
 
 export const purchaseItems = () => {
-    const cartItems = document.getElementsByClassName('cart__items')[0]
-    while (cartItems.hasChildNodes()) {
-        cartItems.removeChild(cartItems.firstChild)
-    }
-    document.getElementById('discountTotal').textContent = '0%'
-    updateCartTotal()
+    checkoutReceiptOpen();
+    
 }

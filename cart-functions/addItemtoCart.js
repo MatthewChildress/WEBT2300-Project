@@ -5,6 +5,8 @@ export const addItemToCart = (name, price, image) => {
     
     const cartItems = document.getElementsByClassName('cart__items')[0]
     const cartItemNames = cartItems.getElementsByClassName('cart__item__name')
+
+    const checkoutItems = document.getElementsByClassName('checkout__items')[0]
     
     // check to ensure only one instance of item added to cart initially
     for (let i = 0; i < cartItemNames.length; i++) {
@@ -24,7 +26,13 @@ export const addItemToCart = (name, price, image) => {
     const btnTD = document.createElement('td');
     const cartButton = document.createElement('button');
 
-    // attaches elements to DOM 
+    const checkoutRow = document.createElement('tr')
+    const checkoutImage = document.createElement('img');
+    const checkoutName = document.createElement('td');
+    const checkoutPrice = document.createElement('td');
+    const checkoutQuantity = document.createElement('td');
+
+    // attaches elements to cart DOM 
     cartItems.appendChild(cartRow);
     cartRow.appendChild(cartImage);
     cartRow.appendChild(cartName);
@@ -34,7 +42,14 @@ export const addItemToCart = (name, price, image) => {
     cartRow.appendChild(btnTD);
     btnTD.appendChild(cartButton);
 
-    // sets class names 
+    // attaches elements to checkout DOM
+    checkoutItems.appendChild(checkoutRow);
+    checkoutRow.appendChild(checkoutImage);
+    checkoutRow.appendChild(checkoutName);
+    checkoutRow.appendChild(checkoutPrice);
+    checkoutRow.appendChild(checkoutQuantity);
+
+    // sets class names for cart
     cartRow.classList.add('cart-row')
     cartRow.className = "cart__row"
     cartImage.className = "cart__item__image";
@@ -43,13 +58,28 @@ export const addItemToCart = (name, price, image) => {
     cartPrice.className = "cart__price"
     cartButton.className = "cart__button"
 
-    // sets different attributes for elements
+    // sets class names for checkout
+    checkoutRow.classList.add('checkout-row')
+    checkoutRow.className = "checkout__row"
+    checkoutImage.className = "checkout__item__image";
+    checkoutName.className = "checkout__item__name";
+    checkoutQuantity.className = "checkout__quantity"
+    checkoutQuantity.id = "checkoutQuantity"
+    checkoutPrice.className = "checkout__price"
+
+    // sets different attributes for cart elements
     cartImage.src = `${image}`
     cartName.textContent = `${name}`
     cartPrice.textContent = `${price}`
     cartQuantity.setAttribute("type", "number");
-    cartQuantity.setAttribute("value", "1");
+/*     cartQuantity.setAttribute("value", "1"); */
     cartButton.innerHTML = `<span class="material-symbols-outlined item__subtract">close</span>`
+
+    // sets different attributes for checkout elements
+    checkoutImage.src = `${image}`
+    checkoutName.textContent = `${name}`
+    checkoutPrice.textContent = `${price}`
+    checkoutQuantity.textContent = cartQuantity.value
 
     // creates event listeners for input quantity and remove buttons
     cartRow.getElementsByClassName('cart__button')[0].addEventListener('click', removeCartItem)
