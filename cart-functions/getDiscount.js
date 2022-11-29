@@ -1,6 +1,6 @@
+import { updateCartTotal } from "./updateCartTotal.js";
 
 export const getDiscount = () => {
-    let discountTotal = document.getElementById("discountTotal");
     //Get values from each Radio question
     var member = $("input[name=Member]:checked").val(); // gets the value from the radio (true/false)
     var veteran = $("input[name=Veteran]:checked").val(); // gets the value from the radio (true/false)
@@ -17,10 +17,12 @@ export const getDiscount = () => {
         if (employee == 'true') {
             discount += 3 // 3% discount if an Employee 
         }
-        discountTotal.innerHTML = `${discount}%`;
+        document.getElementById('discountTotal').textContent = `${discount}%`;
     }
     else {
         document.getElementById("quizOutput").innerHTML = "Please answer all questions.";
+
     }
+    updateCartTotal();
 
 }

@@ -15,7 +15,6 @@ import { getDiscount } from './cart-functions/getDiscount.js'
 
 
 let discountSubmit = document.getElementById("discountSubmit");
-
 discountSubmit.addEventListener('click', getDiscount);
 
 // gives time & day. can append to be two divs if needed

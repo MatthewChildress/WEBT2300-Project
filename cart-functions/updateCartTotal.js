@@ -1,7 +1,19 @@
 export const updateCartTotal = () => {
     const cartItemContainer = document.getElementsByClassName('cart__items')[0]
     const cartRows = cartItemContainer.getElementsByClassName('cart__row')
+    const discount = document.getElementById('discountTotal').innerHTML
+
+    let subTotal = 0
     let total = 0
+    let discountAmount;
+
+    if (discount == undefined || NaN) {
+        discountAmount = parseInt(0);
+    }
+    else
+    {
+        discountAmount = parseInt(discount)
+    }
 
     // checks the quantity and price of each item and returns sum
     for (let i = 0; i < cartRows.length; i++) {
@@ -17,7 +29,9 @@ export const updateCartTotal = () => {
         const quantity = cartQuantity.value
 
         // turns into floating point
-        total += parseFloat(price * quantity)
+        subTotal += parseFloat(price * quantity)
+        total = subTotal - parseInt(subTotal * (discountAmount / 100))
     }
-    document.getElementsByClassName('cart__total')[0].innerText = `$${total}`
+    document.getElementsByClassName('cart__total')[0].innerText = `$${subTotal}`
+    document.getElementById('finalTotal').innerText = `$${total}`
 }

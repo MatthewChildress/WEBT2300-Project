@@ -5,5 +5,6 @@ export const purchaseItems = () => {
     while (cartItems.hasChildNodes()) {
         cartItems.removeChild(cartItems.firstChild)
     }
+    document.getElementById('discountTotal').textContent = '0%'
     updateCartTotal()
 }
