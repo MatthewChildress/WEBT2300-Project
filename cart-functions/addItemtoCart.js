@@ -72,7 +72,6 @@ export const addItemToCart = (name, price, image) => {
     cartName.textContent = `${name}`
     cartPrice.textContent = `${price}`
     cartQuantity.setAttribute("type", "number");
-/*     cartQuantity.setAttribute("value", "1"); */
     cartButton.innerHTML = `<span class="material-symbols-outlined item__subtract">close</span>`
 
     // sets different attributes for checkout elements
